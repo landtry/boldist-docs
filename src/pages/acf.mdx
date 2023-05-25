@@ -1,0 +1,160 @@
+export const description =
+  'On this page, we’ll dive into our current process for developing Wordpress sites using ACF (Advanced Custom Fields).'
+
+# Template Based Architecture
+
+As the title suggests, our currents sites are a primarily composed of page templates. At heart of this approach, we depend on a plugin known as ACF. On this page, we'll dive into the different ways we leverage ACF to quickly build templates for our clients. {{ className: 'lead' }}
+
+---
+
+## File Structure {{ tag: 'ACF', label: 'Template Architecture' }}
+
+<Row>
+  <Col>
+
+    Here we want to focus on two important folders within the theme directory, namely the ```template-pages``` and ```template-parts``` folders.
+
+    ### Template pages directory
+    Contains all of the custom .php template files for the site.
+
+    ### Template parts directory
+    Contains all of the custom .php component files for the site.
+
+    ### Default templates
+    There are default templates that exist natively within Wordpress, such as single.php (posts),page.php (default page template), index.php (blog archive), and others. These templates are not located within the template-pages directory, but rather the theme root directory
+
+    <Note>
+      ACF field groups can still be used within these templates. However, it's important to note that for templates single.php we often use content directly from the Wordpress Block Editor, for the sake of maximizing content writers' productivity (more on this later).
+    </Note>
+
+  </Col>
+  <Col>
+      ```html {{ title: 'Theme File Structure' }}
+      theme/
+        template-pages/
+          home.php
+          about.php
+          contact.php
+        template-parts/
+          svg-arrow.php
+          pagination.php
+          image.php
+        index.php
+        page.php
+        single.php
+      ```
+  </Col>
+</Row>
+
+---
+
+## Types of templates {{ tag: 'ACF', label: 'Flexible vs Static Layouts' }}
+
+This endpoint allows you to add a new contact to your contact list in Protocol. To add a contact, you must provide their Protocol username and phone number.
+
+### Flexible Layouts
+This endpoint allows you to add a new contact to your
+contact list in Protocol. To add a contact, you must provide their Protocol
+username and phone number.
+
+### Static Layouts
+This endpoint allows you to add a new contact to your
+contact list in Protocol. To add a contact, you must provide their Protocol
+username and phone number.
+
+<CodeGroup title="Template File Examples" tag="ACF" label="Template Architecture">
+
+```php {{ title: 'Flexible Layout' }}
+<?php
+/**
+ * Template Name: Home
+ *
+ */
+
+get_header();
+
+if (have_rows('home_page_builder')) {
+    while(have_rows('home_page_builder')) {
+        the_row();
+
+        if( get_row_layout() == 'home_hero' ) {
+            $home_hero = get_sub_field('home_hero');
+
+            if ($home_hero) {
+                extract($home_hero);
+
+                echo '<section class="...">';
+                // hero content
+                echo '</section>';
+            }
+        }
+
+        if( get_row_layout() == 'home_cta' ) {
+            $home_cta = get_sub_field('home_cta');
+
+            if ($home_cta) {
+                extract($home_cta);
+
+                echo '<section class="...">';
+                // CTA content
+                echo '</section>';
+            }
+        }
+    }
+}
+
+get_footer();
+```
+
+```php {{ title: 'Static Layout' }}
+<?php
+/**
+ * Template Name: Home
+ *
+ */
+
+get_header();
+
+echo '<div class="about-2023">';
+
+    $home_hero = get_field('home_hero');
+    if ($home_hero) {
+        extract($home_hero);
+
+        echo '<section class="...">';
+            // hero content
+        echo '</section>';
+    }
+
+    $home_cta = get_field('home_cta');
+    if ($home_cta) {
+        extract($home_cta);
+
+        echo '<section class="...">';
+            // CTA content
+        echo '</section>';
+    }
+
+echo '</div>';
+
+get_footer();
+
+?>
+```
+</CodeGroup>
+
+---
+
+## Content writing experience {{ tag: 'BACKEND', label: 'Content Editor' }}
+
+It's important to consider what the experience is like for content writers whenever they are updating or creating new pages using the flexible layout or static layout paradigms.
+
+### Flexible Layouts
+The position of all sections within a page are free from the page design. Within a flexible system, copy writers can change the position of a section, as well as adding an entierly new instance of a section. This gives more freedom to the copy writer when determining the proper layout of a page, while still contrainsing them within the intended design.
+
+![content-writing-experience](/content-writing-experience-flex-2.png)
+
+### Static Layouts
+Within the static layout paradigm, The position of all sections within a page are determined by the page design. We aim for as close to a 1 to 1 representation as possible. This means that content writers can only change the content within elements of the page, while being locked from changing their appearance or position (unless an ACF field exists for those parameters, of course 🙃).
+
+![content-writing-experience](/content-writing-experience.png)

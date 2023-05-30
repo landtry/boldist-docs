@@ -53,11 +53,13 @@ As the title suggests, our currents sites are a primarily composed of page templ
 This endpoint allows you to add a new contact to your contact list in Protocol. To add a contact, you must provide their Protocol username and phone number.
 
 ### Flexible Layouts
+
 This endpoint allows you to add a new contact to your
 contact list in Protocol. To add a contact, you must provide their Protocol
 username and phone number.
 
 ### Static Layouts
+
 This endpoint allows you to add a new contact to your
 contact list in Protocol. To add a contact, you must provide their Protocol
 username and phone number.
@@ -141,6 +143,7 @@ get_footer();
 
 ?>
 ```
+
 </CodeGroup>
 
 ---
@@ -150,11 +153,48 @@ get_footer();
 It's important to consider what the experience is like for content writers whenever they are updating or creating new pages using the flexible layout or static layout paradigms.
 
 ### Flexible Layouts
+
 The position of all sections within a page are free from the page design. Within a flexible system, copy writers can change the position of a section, as well as adding an entierly new instance of a section. This gives more freedom to the copy writer when determining the proper layout of a page, while still contrainsing them within the intended design.
 
 ![content-writing-experience](/content-writing-experience-flex-2.png)
 
 ### Static Layouts
+
 Within the static layout paradigm, The position of all sections within a page are determined by the page design. We aim for as close to a 1 to 1 representation as possible. This means that content writers can only change the content within elements of the page, while being locked from changing their appearance or position (unless an ACF field exists for those parameters, of course 🙃).
 
 ![content-writing-experience](/content-writing-experience.png)
+
+### Gutenberg
+
+---
+
+## Thresholds
+
+### Static
+
+- Custom page template
+- Content does not change very often
+- Brochure pages (aka not blogs)
+- Highly designed
+- Wordpress loop pages (blog roll)
+
+### Flexible
+
+- Content might change
+- Custom Post Types
+- Highly designed, but also dynamic content
+- Default Page Template
+
+### Gutenberg
+
+- Posts
+- Custom Post Types
+- ACF Gutenberg Blocks
+- Default Page Template
+- Highly dynamic content
+
+How do we implement Gutenberg? Is Gutenberg the next-gen Wordpress experience that we need to shift to? Is our current process the best we can be using?
+
+- Template Based Architecture (Classic Template w/ACF)
+- Block Based Architecture (Block Template)
+- Hybrid Based Architecture (Classic Template w/ACF Gutenberg)

@@ -200,7 +200,7 @@ export const navigation = [
     title: 'Wordpress Development Options',
     links: [
       { title: 'Template Based Architecture', href: '/acf' },
-      // { title: 'Contacts', href: '/contacts' },
+      { title: 'Blocked Based Architecture', href: '/block' },
       // { title: 'Conversations', href: '/conversations' },
       // { title: 'Messages', href: '/messages' },
       // { title: 'Groups', href: '/groups' },

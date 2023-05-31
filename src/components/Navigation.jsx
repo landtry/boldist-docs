@@ -207,6 +207,15 @@ export const navigation = [
       // { title: 'Attachments', href: '/attachments' },
     ],
   },
+  {
+    title: 'Google Analytics',
+    links: [
+      {
+        title: 'Scripts, Triggers, & Variables',
+        href: '/ga4-scripts',
+      },
+    ],
+  },
 ]
 
 export function Navigation(props) {

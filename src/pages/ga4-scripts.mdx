@@ -1,0 +1,245 @@
+export const description =
+  'A definition of Boldist GA4 tags, scripts, triggers, and variables, along with their purpose.'
+
+# GA4 Documentation
+
+Welcome to the documentation page for Boldist GA4 tags, scripts, triggers, and variables. This guide aims to provide a clear understanding of these essential components and their respective purposes within the Boldist internal team's analytics process. {{ className: 'lead' }}
+
+---
+
+## Scripts
+
+We use 3rd party scripts to gather data and provide insights into user behavior, website performance, and audience engagement for the purpose of optimizing the website's effectiveness and making data-driven decisions.
+
+### Facebook Pixel
+
+Facebook Pixel scripts are snippets of code provided by Facebook that are placed on a website to collect data and track user interactions. When a user visits a web page that has the Facebook Pixel script installed, the script sends information back to Facebook, allowing businesses to measure the effectiveness of their Facebook advertising campaigns and optimize their targeting strategies.
+
+```html
+<!-- Facebook Pixel Code -->
+<script type="text/javascript">
+  !(function (f, b, e, v, n, t, s) {
+    if (f.fbq) return
+    n = f.fbq = function () {
+      n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+    }
+    if (!f._fbq) f._fbq = n
+    n.push = n
+    n.loaded = !0
+    n.version = '2.0'
+    n.queue = []
+    t = b.createElement(e)
+    t.async = !0
+    t.src = v
+    s = b.getElementsByTagName(e)[0]
+    s.parentNode.insertBefore(t, s)
+  })(
+    window,
+    document,
+    'script',
+    'https://connect.facebook.net/en_US/fbevents.js'
+  )
+  fbq('init', '1675948675780825') // Insert your pixel ID here.
+  fbq('track', 'PageView')
+</script>
+<noscript
+  ><img
+    height="1"
+    width="1"
+    style="display:none"
+    src="https://www.facebook.com/tr?id=1675948675780825&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+```
+
+### Outfunnel
+
+This code enables tracking and integration capabilities provided by the Outfunnel platform for marketing and sales automation purposes.
+
+```html
+<!-- outfunnel start -->
+<script type="text/javascript">
+  window.OFID = '61c5ba3eeb73af43f3a3446c'
+  ;(function () {
+    var script = document.createElement('script')
+    var url =
+      'https://cdn.outfunnel.com/c.js?v=' +
+      new Date().toISOString().substring(0, 10)
+    script.setAttribute('src', url)
+    document.getElementsByTagName('head')[0].appendChild(script)
+  })()
+</script>
+<!-- outfunnel end -->
+```
+
+### Pipedrive
+
+Pipedrive is a popular customer relationship management (CRM) platform that helps businesses manage their sales processes. In general, scripts provided by CRM platforms like Pipedrive are embedded on web pages to facilitate the integration between the web page and the CRM system.
+
+```html
+<!-- pipedrive start -->
+<script type="text/javascript">
+  ;(function (ss, ex) {
+    window.ldfdr =
+      window.ldfdr ||
+      function () {
+        ;(ldfdr._q = ldfdr._q || []).push([].slice.call(arguments))
+      }
+    ;(function (d, s) {
+      fs = d.getElementsByTagName(s)[0]
+      function ce(src) {
+        var cs = d.createElement(s)
+        cs.src = src
+        cs.async = 1
+        fs.parentNode.insertBefore(cs, fs)
+      }
+      ce(
+        'https://sc.lfeeder.com/lftracker_v1_' +
+          ss +
+          (ex ? '_' + ex : '') +
+          '.js'
+      )
+    })(document, 'script')
+  })('DzLR5a5Jjp08BoQ2')
+</script>
+<!-- pipedrive end -->
+```
+
+### Mailchimp Goals
+
+This code dynamically loads and executes the Mailchimp goal.min.js script, which is responsible for tracking and goal tracking functionality. This script facilitates the tracking of specific user actions or events on the webpage and sends relevant data to Mailchimp for analysis or marketing automation purposes.
+
+```html
+<!--mail chimp start -->
+<script defer type="text/javascript">
+  var $mcGoal = { settings: { uuid: '9cd2a1ffa021754103be84a32', dc: 'us1' } }
+  ;(function () {
+    var sp = document.createElement('script')
+    sp.type = 'text/javascript'
+    sp.async = true
+    sp.defer = true
+    sp.src =
+      ('https:' == document.location.protocol
+        ? 'https://s3.amazonaws.com/downloads.mailchimp.com'
+        : 'http://downloads.mailchimp.com') + '/js/goal.min.js'
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(sp, s)
+  })()
+</script>
+<!--mail chimp end -->
+```
+
+### Gravity Form - Listener - Newsletter
+
+This code helps capture form submission data and trigger a custom event when specific forms (identified by their formIDs) are successfully submitted using Gravity Forms.
+
+```html
+<!-- gravity forms start -->
+<script type="text/javascript">
+  jQuery(document).ready(function () {
+    jQuery(document).bind(
+      'gform_confirmation_loaded',
+      function (event, formID) {
+        if (formID == 6 || formID == 14) {
+          window.dataLayer = window.dataLayer || []
+          window.dataLayer.push({
+            event: 'formSubmissionNewsletter',
+            formID: formID,
+          })
+        }
+      }
+    )
+  })
+</script>
+<!-- gravity forms end -->
+```
+
+### Gravity Form - Listener
+
+This code helps capture form submission data and triggers a custom event when a specific form (identified by its formID) with the ID of 10 is successfully submitted using Gravity Forms. The purpose is to track and send information about the form submission to the window.dataLayer array, enabling further processing or tracking.
+
+```html
+<!-- gravity forms start -->
+<script type="text/javascript">
+  jQuery(document).ready(function () {
+    jQuery(document).bind(
+      'gform_confirmation_loaded',
+      function (event, formID) {
+        if (formID == 10) {
+          window.dataLayer = window.dataLayer || []
+          window.dataLayer.push({
+            event: 'formSubmission',
+            formID: formID,
+          })
+        }
+      }
+    )
+  })
+</script>
+<!-- gravity forms end -->
+```
+
+### Iubenda - Google Consent Mode
+
+By combining Iubenda and Google Consent Mode, website owners can manage their privacy compliance by implementing a consent management solution and controlling the behavior of Google tags accordingly. This helps ensure that user data is collected and processed in line with privacy regulations and user preferences.
+
+---
+
+## Triggers
+
+Triggers in Google Tag Manager are responsible for determining when tags should be fired or executed on a website or mobile app. They define the conditions that need to be met for a particular tag to be triggered and initiate its associated tracking or functionality. Triggers can be based on various factors, such as specific page URLs, clicks on specific elements, form submissions, time delays, or even custom events. By configuring triggers in Google Tag Manager, you have fine-grained control over when and where your tags are activated, ensuring that tracking and other scripts are implemented precisely at the desired moments during user interactions.
+
+<Properties>
+  <Property name="Just Links">**GA4 - Event - Blog Category - Click**</Property>
+  <Property name="Just Links">**GA4 - Event - Book a Call Click**</Property>
+  <Property name="All Elements">**GA4 - Event - Book a Call Click**</Property>
+  <Property name="Javascript Error">**GA4 - Event - Error Detection**</Property>
+  <Property name="Custom Event">
+    **GA4 - Event - Form Submission - Contact**
+  </Property>
+  <Property name="Custom Event">
+    **GA4 - Event - Form Submission - Newsletter**
+  </Property>
+  <Property name="Just Links">**GA4 - Event - Get Directions**</Property>
+  <Property name="Just Links">**GA4 - Event - Outbound Link**</Property>
+  <Property name="Just Links">**GA4 - Event - Phone Call**</Property>
+  <Property name="Page View">**GA4 - Event - Pipeline Discovered**</Property>
+  <Property name="Scroll Depth">**GA4 - Event - Scroll - 90%**</Property>
+  <Property name="Just Links">**GA4 - Event - Social Visit - Blog**</Property>
+  <Property name="Just Links">
+    **GA4 - Event - Social Visit - Contact**
+  </Property>
+  <Property name="Just Links">**GA4 - Event - Social Visit - Footer**</Property>
+  <Property name="All Elements">**GA4 - Event - Typeform - Page 1**</Property>
+  <Property name="All Elements">**GA4 - Event - Typeform - Page 2**</Property>
+  <Property name="All Elements">**GA4 - Event - Typeform - Page 3**</Property>
+  <Property name="All Elements">**GA4 - Event - Typeform - Page 4**</Property>
+  <Property name="All Elements">**GA4 - Event - Typeform - Page 5**</Property>
+  <Property name="Custom Event">**GA4 - Event - Typeform - Page 6**</Property>
+  <Property name="Custom Event">**GA4 - Event - Typeform - Page 6**</Property>
+</Properties>
+
+---
+
+## Variables
+
+Variables in Google Tag Manager serve as placeholders or dynamic values that are used to capture and retrieve data from a website or mobile app. They provide a way to access and manipulate information such as page URLs, click events, form inputs, or custom data elements. Variables act as inputs for tags and triggers, allowing you to pass dynamic values or extract specific data points that are necessary for tracking, customization, or other functionality.
+
+<Properties>
+  <Property name="Data Layer Variable">**Click Classes**</Property>
+  <Property name="Data Layer Variable">**Click Element**</Property>
+  <Property name="Data Layer Variable">**Click ID**</Property>
+  <Property name="Data Layer Variable">**Click Target**</Property>
+  <Property name="Auto-Event Variable">**Click Text**</Property>
+  <Property name="Data Layer Variable">**Click URL**</Property>
+  <Property name="Data Layer Variable">**Error Line**</Property>
+  <Property name="Data Layer Variable">**Error Message**</Property>
+  <Property name="Data Layer Variable">**Error URL</Property>
+  <Property name="Custom Event">**Event**</Property>
+  <Property name="Data Layer Variable">**Form ID**</Property>
+  <Property name="URL">**Page Hostname**</Property>
+  <Property name="URL">**Page Path**</Property>
+  <Property name="URL">**Page URL**</Property>
+  <Property name="HTTP Referrer">**Referrer**</Property>
+  <Property name="Data Layer Variable">**Scroll Depth Units**</Property>
+</Properties>

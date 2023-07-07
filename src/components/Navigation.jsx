@@ -201,7 +201,7 @@ export const navigation = [
     links: [
       { title: 'Template Based Architecture', href: '/acf' },
       { title: 'Blocked Based Architecture', href: '/block' },
-      // { title: 'Conversations', href: '/conversations' },
+      { title: 'Hybrid Based Architecture', href: '/hybrid' },
       // { title: 'Messages', href: '/messages' },
       // { title: 'Groups', href: '/groups' },
       // { title: 'Attachments', href: '/attachments' },

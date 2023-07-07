@@ -1,0 +1,116 @@
+export const description =
+  'An internal pitch for adopting headless CMS architecture.'
+
+# What is a web analytics plan?
+
+A web analytics serves as a written guide that transforms your overarching business goals into quantifiable metrics and parameters that can be tracked on your website. It establishes a structure for tailoring your web analytics setup to suit your specific needs and plays an essential role within your comprehensive digital marketing approach.{{ className: 'lead' }}
+
+## Step 1 — Define your objets and key performance indicators (KPIs)
+
+Create a framework outlining your business goals and align them with corresponding Key Performance Indicators (KPIs). If necessary, we can link to a Google Sheet for reference.
+
+Begin by identifying strategies and tactics that will support the achievement of these objectives, and define the specific KPIs associated with each goal. Some objectives may require multiple KPIs to accurately measure success.
+
+For instance, if the objective is to increase revenue, key strategies such as boosting sales, raising the average order value, and reducing returns can be implemented, which will in turn serve as the corresponding KPIs.
+
+Once the comprehensive list of KPIs is compiled, it is essential to seek approval from key stakeholders and, ideally, the Board. However, it is important to note that this list is not set in stone and should be periodically reviewed to ensure its relevance and alignment with the constantly evolving digital landscape.
+
+1.  **Client Leads** — KPIs:
+
+    - Book A Call Form Submissions
+    - Pipedrive Leads
+
+2.  **Hiring Leads** — KPIs:
+
+    - Work Here Form Submission
+
+3.  **Lead Qualifier** — KPIs:
+
+    - Page Views
+    - Scroll Triggers
+
+4.  **Site Engagement** — KPIs:
+
+    - Link clicks
+    - Form submissions
+    - Page Scroll
+    - Page visits
+
+5.  **Social Media Engagement** — KPIs:
+    - Social media link clicks
+
+## Step 2 — Consider data segmentation requirements and set targets
+
+Once the foundational measurement framework is established, it is important to consider setting specific targets and segmentation. Here are some considerations to address during this stage:
+
+1. Mobile vs. Desktop: Determine whether performance targets should be divided between mobile and desktop platforms, recognizing potential variations in user behavior and engagement.
+
+2. Geographical or Demographic Targets: Decide whether targets should be set based on geographic locations or specific demographic segments, tailoring the measurement approach to capture relevant insights.
+
+3. Product Category Breakdown: Consider whether different product categories should be segmented for measurement and reporting purposes, enabling a more detailed analysis of performance within each category.
+
+These segmentation decisions may impact the implementation of tracking codes within your web analytics software. It's important to configure custom metrics and dimensions accordingly. Additionally, consider the diverse audiences you are targeting during this phase.
+
+The measurement plan should outline a comprehensive "translation" of business objectives into measurable performance metrics at this stage. It is crucial to note that not all metrics may be measurable using Google Analytics (GA) or your chosen analytics platform. For example, social metrics like likes, retweets, and repins may be included in the measurement plan but may require alternative tracking methods beyond GA. Highlight such metrics in your plan for future consideration.
+
+With the primary metrics identified, you can proceed to set targets for each of them. Involving the wider team and key stakeholders at this stage can help gather input and ensure alignment with overall goals and expectations.
+
+1.  **Client Leads** — GA4 Metrics:
+
+    - GA4 Event Typeform Page 1
+    - GA4 Event Typeform Page 2
+    - GA4 Event Typeform Page 3
+    - GA4 Event Typeform Page 4
+    - GA4 Event Typeform Page 5
+    - GA4 Event Typeform Page 6
+    - GA4 Event Typeform Page 7
+    - GA4 Form Submission Contact
+
+    - GA4 Event Pipeline Aware
+    - GA4 Event Pipeline Considering
+    - GA4 Event Pipeline Deciding
+    - GA4 Event Pipeline Discovered
+
+    - GA4 Event Get Directions
+    - GA4 Event Phone Call
+
+2.  **Hiring Leads** — GA4 Metrics:
+
+    - _Not tracking_
+
+3.  **Lead Qualifier** — GA4 Metrics:
+
+    - GA4 Event Scroll 90%
+
+4.  **Site Engagement** — GA4 Metrics:
+
+    - GA4 Event Outbound Link
+    - GA4 Event Phone Call
+    - GA4 Event Social Visit Blog
+    - GA4 Event Social Visit Contact
+    - GA4 Event Social Visit Footer
+    - GA4 Event Scroll 90%
+
+5.  **Social Media Engagement** — GA4 Metrics:
+    - GA4 Event Social Visit Blog
+    - GA4 Event Social Visit Contact
+    - GA4 Event Social Visit Footer
+
+## Step 3 — Create an implementation plan
+
+After determining the metrics and tracking requirements, it's essential to ensure all the necessary tracking is properly set up. Conducting an audit of the existing Google Analytics (GA) configuration will help identify any gaps and indicate additional tracking needs.
+
+To begin, it is recommended to upgrade to the latest version of GA, known as Google Analytics 4. This upgrade should be done before implementing the tracking for the measurement plan, as GA4 offers new opportunities for additional tracking capabilities. These include features like custom dimensions and metrics, sending data to GA from the website's back end using the measurement protocol, and dimension widening.
+
+Consider implementing a tag management solution such as Google Tag Manager if you are not already using one. Using a tag container allows for more agility in the future when changes are required. It enables you to implement and modify tracking code without directly altering the website's code. This is particularly beneficial when additional tags are needed or when tracking requirements need to be adjusted due to website changes.
+
+Utilizing a tag container like Google Tag Manager reduces the risk of missing tags during migration. If your website is likely to change or undergo migration, it is more manageable for developers to transfer a single Google Tag Manager snippet, along with any dataLayer information, instead of dealing with various third-party tags individually.
+
+Google Tag Manager is a free and comprehensive tag container solution that caters to the tagging needs of most online businesses. Further information on how this solution works can be found in our recent blog post titled "How To Get Started With Google Tag Manager: Using The New User Interface."
+
+Once you have an understanding of the existing tracking setup, have upgraded to Google Analytics 4, and decided on the approach for implementing the tracking code, it's time to devise an implementation plan. You can create a separate tab in the same Excel document and use columns to indicate what is in scope, what is already in place, and any additional tracking requirements.
+
+## Links to External Resources
+
+- Clickup Document Containing our GA4 audit
+- Any other documents that we have (google sheets, or docs)

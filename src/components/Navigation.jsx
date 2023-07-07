@@ -214,6 +214,7 @@ export const navigation = [
         title: 'Scripts, Triggers, & Variables',
         href: '/ga4-scripts',
       },
+      { title: 'Web Analytics Plan', href: '/web-analytics-plan' },
     ],
   },
 ]

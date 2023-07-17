@@ -1,0 +1,81 @@
+# Headless Setup
+
+
+
+
+## WP Engine Setup
+1. Setup new site on WP Engine Admin
+    - Add to Headless group
+2. Install headless-starter-be
+3. Install Plugins
+    - Faust.js
+    - WPGraphQL
+    - WPGraphQL Yoast SEO Addon
+    - Yoast SEO
+    - ACF Pro
+    - Gravity Forms
+    - JAMstack Deployments
+    - wp-graphql-acf: https://github.com/wp-graphql/wp-graphql-acf
+    - wp-graphql-gravity-forms: https://github.com/AxeWP/wp-graphql-gravity-forms
+4. Enable Public Introspection in the GraphQL WP Admin Settings
+
+
+
+## Github Setup
+1. Setup local repo (git cli)
+2. Clone repo into projects folder
+    - gh repo clone boldist/headless-starter-fe (git cli)
+3. cd [REPO_NAME] (git cli)
+4. code . (git cli)
+5. rm -rf .git
+6. git init
+    - Make sure default is main NOT master
+7. gh repo create 
+8. Select Push an existing local repository to GitHub
+9. Select boldist as the owner
+10. Select Public as the Visibility
+11. Add a remote - origin
+12. git add *
+13. git commit -m "initial commit"
+14. git push -u origin main
+
+
+
+## Codebase Setup
+1. cp .env.local.sample .env.local (vs terminal)
+2. Setup WP Backend (WP Engine - see step 2 from WP Engine Setup)
+3. Input NEXT_PUBLIC_WORDPRESS_URL  value
+4. Input FAUST_SECRET_KEY value
+5. nvm use --lts (vs terminal)
+6. npm i (vs terminal)
+7. npm run dev (vs terminal)
+8. Navigate to http://localhost:3000
+9. DEV!
+
+
+
+## Vercel Setup
+1. Create New Vercel Project
+2. Import newly created git repo
+3. Select Next.js as the Framework Preset
+4. Input Environment Variables
+    - NEXT_PUBLIC_WORDPRESS_URL
+    - FAUST_SECRET_KEY
+5. DEPLOY
+6. Add vercel domain to the Front-end site URL Faust settings (WP Admin)
+
+
+
+
+
+
+
+
+## ACF Building
+1. Create a new page template in Appearance > Editor
+2. Create New Field Group
+3. Toggle Show in GraphQL on the bottom GraphQL Section
+4. Rename GraphQL Field Name
+    - ex: PAGE: About becomes about
+5. Assign template to page (WP Admin)
+5. DEV!

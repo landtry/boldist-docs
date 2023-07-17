@@ -217,6 +217,15 @@ export const navigation = [
       { title: 'Web Analytics Plan', href: '/web-analytics-plan' },
     ],
   },
+  {
+    title: 'Headless Processes',
+    links: [
+      {
+        title: 'Readme',
+        href: '/headless-process',
+      },
+    ],
+  },
 ]
 
 export function Navigation(props) {

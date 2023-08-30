@@ -16,7 +16,9 @@ export function Quote() {
           },
         })
 
-        setJoke(response.data.joke)
+        setTimeout(() => {
+          setJoke(response.data.joke)
+        }, 700)
       } catch (error) {
         console.error('Error:', error)
       }
@@ -26,8 +28,17 @@ export function Quote() {
   }, [])
 
   return (
-    <div className="max-w-lg border-l border-l-gray-500 pl-4 text-xl font-bold italic">
-      "{joke}"
-    </div>
+    <>
+      {joke ? (
+        <div className="max-w-lg border-l border-l-gray-500 pl-4 text-xl font-bold italic">
+          {joke ? `"${joke}"` : ''}
+        </div>
+      ) : (
+        <div className="space-y-4">
+          <div className="h-6 w-full max-w-lg animate-pulse rounded-xl bg-gray-800/10 pl-4 text-xl font-bold italic dark:bg-gray-100/10"></div>
+          <div className="h-6 w-full max-w-lg animate-pulse rounded-xl bg-gray-800/10 pl-4 text-xl font-bold italic dark:bg-gray-100/10"></div>
+        </div>
+      )}
+    </>
   )
 }

@@ -23,9 +23,9 @@ export default function App({ Component, pageProps }) {
     <>
       <Head>
         {router.pathname === '/' ? (
-          <title>Protocol API Reference</title>
+          <title>Boldist Knowledge Base</title>
         ) : (
-          <title>{`${pageProps.title} - Protocol API Reference`}</title>
+          <title>{`${pageProps.title} - Boldist Knowledge Base`}</title>
         )}
         <meta name="description" content={pageProps.description} />
       </Head>

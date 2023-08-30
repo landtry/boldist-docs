@@ -184,27 +184,16 @@ function NavigationGroup({ group, className }) {
 }
 
 export const navigation = [
-  // {
-  //   title: 'Guides',
-  //   links: [
-  //     { title: 'Introduction', href: '/' },
-  //     { title: 'Quickstart', href: '/quickstart' },
-  //     { title: 'SDKs', href: '/sdks' },
-  //     { title: 'Authentication', href: '/authentication' },
-  //     { title: 'Pagination', href: '/pagination' },
-  //     { title: 'Errors', href: '/errors' },
-  //     { title: 'Webhooks', href: '/webhooks' },
-  //   ],
-  // },
+  {
+    title: 'Wordpress Maintenance',
+    links: [{ title: "Plugins: Do's & Dont's", href: '/plugins-dos-donts' }],
+  },
   {
     title: 'Wordpress Development Options',
     links: [
       { title: 'Template Based Architecture', href: '/acf' },
       { title: 'Blocked Based Architecture', href: '/block' },
       { title: 'Hybrid Based Architecture', href: '/hybrid' },
-      // { title: 'Messages', href: '/messages' },
-      // { title: 'Groups', href: '/groups' },
-      // { title: 'Attachments', href: '/attachments' },
     ],
   },
   {

@@ -194,6 +194,10 @@ export const navigation = [
       { title: 'Template Based Architecture', href: '/acf' },
       { title: 'Blocked Based Architecture', href: '/block' },
       { title: 'Hybrid Based Architecture', href: '/hybrid' },
+      {
+        title: 'Block Theme Development Internal Research',
+        href: '/findings',
+      },
     ],
   },
   {

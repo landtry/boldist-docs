@@ -110,3 +110,45 @@ By following these troubleshooting strategies, you can identify and address plug
 - Better Search Replace
 - User Switching
 - User Role Editor
+
+## Resources for Monitoring Wordpress / Woocommerce / Plugin / Security Updates:
+
+- [The Woocommerce Extensions Updates Blog](https://woocommerce.com/extensions-updates/)
+- [Advanced Custom Fields Blog](https://www.advancedcustomfields.com/blog/)
+- [Gravity Forms Blog](https://www.gravityforms.com/blog/)
+- [Sucuri Wordpress Security Blog](https://blog.sucuri.net/category/wordpress-security)
+- [Manage WP Blog](https://managewp.com/blog)
+- [Wordpress.org Blog](https://wordpress.org/news/)
+- [WPScan Vulnerability Database](https://wpvulndb.com/)
+
+## Updating Wordpress Plugins (non-Woocommerce)
+
+1. Pull a staging version of a site on the LS WP Engine server to test the stability of the plugin updates
+2. Perform plugin updates
+3. Scan frontend site display and functionality for any Wordpress or PHP errors as well as broken pages / sections
+4. Scan WordPress backend for any Wordpress or PHP errors
+5. If errors are found, research into causes and resolutions using any available data such as: error code, general error message, plugin / functionality of origin, searching using description of error
+6. Once plugin updates are verified as fully functional perform the updates via the Manage WP Dashboard
+
+## Updating Woocommerce Core and Woocommerce Plugins
+
+1. Research on additions / fixes / updates made to the new woocommerce version for any potential conflicts
+2. Pull a staging version of a site on the LS WP Engine server to test the stability of the Woocommerce updates
+3. Perform Woocommerce updates
+4. Check Woocommerce settings for outdated template files and update files accordingly
+5. Scan frontend site display and functionality for any Wordpress, Woocommerce or PHP errors as well as broken pages / sections
+6. Perform a test transaction to verify checkout functionality
+7. Scan WordPress backend for any Wordpress, Woocommerce or PHP errors
+8. If errors are found, research into causes and resolutions using any available data such as: error code, general error message, plugin / functionality of origin, searching using description of error
+9. Once Woocommerce updates are verified as working; update all woocommerce plugins via each site’s WordPress Dashboard
+
+## Updating WordPress Core
+
+1. Research on additions / fixes / updates made to the new WordPress core release for any potential conflicts
+2. Pull a staging version of a site on the LS WP Engine server to test the stability of the Core update
+3. Perform Core Update
+4. Scan frontend site display and functionality for any Wordpress or PHP errors as well as broken pages / sections
+5. Scan WordPress backend for any Wordpress or PHP errors
+6. If errors are found, research into causes and resolutions using any available data such as: error code, general error message, plugin / functionality of origin, searching using description of error
+7. Once Core update is verified as fully functional update each site using the “Overview” page in the WP Engine Dashboard for the respective site
+8. Scan all site frontend displays one final time to verify that the Core update finished successfully

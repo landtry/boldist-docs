@@ -31,7 +31,7 @@ export function Quote() {
     <>
       {joke ? (
         <div className="max-w-lg border-l border-l-gray-500 pl-4 text-xl font-bold italic">
-          {joke ? `"${joke}"` : ''}
+          {joke ? `&quot;${joke}&quot;` : ''}
         </div>
       ) : (
         <div className="space-y-4">
